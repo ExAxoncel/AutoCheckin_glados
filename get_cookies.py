@@ -1,25 +1,25 @@
 import pickle
 import time
-
 from selenium import webdriver
 
-brower = webdriver.Chrome('/Users/axon/Downloads/chromedriver')         #myMac
-#brower = webdriver.Chrome('/usr/lib/chromium-browser/chromedriver')    #raspi
+#change your dir here
+dir = '/usr/lib/chromium-browser/chromedriver'
+browser = webdriver.Chrome(dir)
 
-#登录跳转后url
+#the url after login
 url = "https://glados.rocks/console/checkin"
-#最后一步url
+#the final url before login, or the url needed login
 last_url = "https://glados.rocks/console"
 
-brower.get(last_url)
+browser.get(last_url)
 flag = True
 while flag:
     print("Please login in!")
-    time.sleep(10)
-    while brower.current_url == url:
-        brower.get("https://glados.rocks/console")
-        pickle.dump(brower.get_cookies() , open("cookies.pkl","wb"))
-        brower.quit()
+    time.sleep(2)
+    while browser.current_url == url:
+        browser.get("https://glados.rocks/console")
+        pickle.dump(browser.get_cookies() , open("cookies.pkl","wb"))
+        browser.quit()
         flag = False
 
-print("Cookies saved in Cookies.pickle!")
+print("Cookies have successfully saved in cookies.pkl!")

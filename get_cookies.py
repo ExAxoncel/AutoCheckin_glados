@@ -2,7 +2,7 @@ import pickle
 import time
 from selenium import webdriver
 
-#change your dir here
+#replace your chromedriver dir here
 dir = '/usr/lib/chromium-browser/chromedriver'
 browser = webdriver.Chrome(dir)
 

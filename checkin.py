@@ -6,10 +6,8 @@ from selenium import webdriver
 
 
 def checkin():
-    #replace your chromedriver dir here
-    dir = '/usr/lib/chromium-browser/chromedriver'
     
-    browser = webdriver.Chrome(dir)
+    browser = webdriver.Chrome('/usr/lib/chromium-browser/chromedriver')    #replace your chromedriver dir here
 
     browser.get('https://glados.rocks')
     cookies = pickle.load(open("cookies.pkl", "rb"))

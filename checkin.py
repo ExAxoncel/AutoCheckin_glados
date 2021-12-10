@@ -1,4 +1,3 @@
-import schedule
 import random
 import time
 import pickle
@@ -31,5 +30,5 @@ def checkin():
     
 while True:
     checkin()
-    schedule.every(1).days.do(checkin)
-    time.sleep(random.randint(1,9) * 60 + random.randint(0,59))
+    print("Done. Sleeping for next time.\n")
+    time.sleep(random.randint(13,24) * 60 + random.randint(0,60))

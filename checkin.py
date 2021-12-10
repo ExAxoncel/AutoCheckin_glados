@@ -4,10 +4,11 @@ import time
 import pickle
 from selenium import webdriver
 
-#replace your chromedriver dir here
-dir = '/usr/lib/chromium-browser/chromedriver'
 
 def checkin():
+    #replace your chromedriver dir here
+    dir = '/usr/lib/chromium-browser/chromedriver'
+    
     browser = webdriver.Chrome(dir)
 
     browser.get('https://glados.rocks')
@@ -29,6 +30,7 @@ def checkin():
     browser.quit()
     print(result_msg)
 
+    
 while True:
     checkin()
     schedule.every(1).days.do(checkin)

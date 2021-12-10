@@ -30,5 +30,6 @@ def checkin():
     print(result_msg)
 
 while True:
+    checkin()
     schedule.every(1).days.do(checkin)
     time.sleep(random.randint(1,9) * 60 + random.randint(0,59))

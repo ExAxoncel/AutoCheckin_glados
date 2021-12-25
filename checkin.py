@@ -30,5 +30,6 @@ def checkin():
     
 while True:
     checkin()
-    print("Done. Sleeping for next time.\n")
+    print("Done. Sleeping for next time.")
+    print("-----------------------------------")
     time.sleep(random.randint(13,24) * 60 + random.randint(0,60))
